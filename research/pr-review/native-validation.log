@@ -1,0 +1,24 @@
+RUN: ['gcc', '-std=c89', '-pedantic', '-Wall', '-Wextra', '-Werror', '-O3', '-c', '/workspace/pr-worktrees/C03/cJSON.c', '-o', '/workspace/pr-validation/native/C03/cJSON-c89.o']
+RUN: ['gcc', '-std=c99', '-O1', '-g', '-fsanitize=address,undefined', '-fno-omit-frame-pointer', '/workspace/pr-worktrees/C03/tests/parse_string.c', '/workspace/pr-worktrees/C03/tests/unity/src/unity.c', '-o', '/workspace/pr-validation/native/C03/parse-string-sanitized', '-lm']
+RUN: ['/workspace/pr-validation/native/C03/parse-string-sanitized']
+/workspace/pr-worktrees/C03/tests/parse_string.c:164:parse_string_should_parse_strings:PASS
+/workspace/pr-worktrees/C03/tests/parse_string.c:165:parse_string_should_copy_bounded_unescaped_strings:PASS
+/workspace/pr-worktrees/C03/tests/parse_string.c:166:parse_string_should_parse_utf16_surrogate_pairs:PASS
+/workspace/pr-worktrees/C03/tests/parse_string.c:167:parse_string_should_not_parse_non_strings:PASS
+/workspace/pr-worktrees/C03/tests/parse_string.c:168:parse_string_should_not_parse_invalid_backslash:PASS
+/workspace/pr-worktrees/C03/tests/parse_string.c:169:parse_string_should_parse_bug_94:PASS
+/workspace/pr-worktrees/C03/tests/parse_string.c:170:parse_string_should_not_overflow_with_closing_backslash:PASS
+
+-----------------------
+7 Tests 0 Failures 0 Ignored 
+OK
+RUN: ['python3', '/workspace/research/benchmarks/csv_adapter.py', 'build', '/workspace/pr-worktrees/C04', '/workspace/pr-validation/native/C04']
+RUN: ['python3', '/workspace/research/benchmarks/csv_adapter.py', 'test', '/workspace/pr-worktrees/C04', '/workspace/pr-validation/native/C04']
+All tests passed
+27204 exact-byte, bounded-buffer, null and custom-quote cases passed
+4095 protected-page serialization checks passed
+RUN: ['gcc', '-std=c99', '-pedantic', '-Wall', '-Wextra', '-Werror', '-O3', '-c', '/workspace/pr-worktrees/C04/libcsv.c', '-o', '/workspace/pr-validation/native/C04/libcsv-c99.o']
+RUN: ['gcc', '-std=gnu99', '-O1', '-g', '-fsanitize=address,undefined', '-fno-omit-frame-pointer', '-I', '/workspace/pr-worktrees/C04', '/workspace/pr-worktrees/C04/test_csv.c', '/workspace/pr-worktrees/C04/libcsv.c', '-o', '/workspace/pr-validation/native/C04/full-test-sanitized']
+RUN: ['/workspace/pr-validation/native/C04/full-test-sanitized']
+All tests passed
+All native PR checks passed
