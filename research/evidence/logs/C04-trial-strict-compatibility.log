@@ -1,0 +1,18 @@
+['gcc', '-std=c89', '-pedantic', '-Wall', '-Wextra', '-Werror', '-O3', '-I', 'repos/libcsv', '-c', 'build/compat/libcsv.c', '-o', 'build/compat/trial-c89.o']
+exit: 1
+build/compat/libcsv.c: In function ‘csv_fini’:
+build/compat/libcsv.c:169:3: error: ISO C90 forbids mixed declarations and code [-Werror=declaration-after-statement]
+  169 |   int quoted = p->quoted;
+      |   ^~~
+build/compat/libcsv.c: In function ‘csv_increase_buffer’:
+build/compat/libcsv.c:293:3: error: ISO C90 forbids mixed declarations and code [-Werror=declaration-after-statement]
+  293 |   size_t to_add = p->blk_size;
+      |   ^~~~~~
+build/compat/libcsv.c: In function ‘csv_parse’:
+build/compat/libcsv.c:325:3: error: ISO C90 forbids mixed declarations and code [-Werror=declaration-after-statement]
+  325 |   unsigned const char *us = s;  /* Access input data as array of unsigned char */
+      |   ^~~~~~~~
+cc1: all warnings being treated as errors
+
+['gcc', '-std=c99', '-pedantic', '-Wall', '-Wextra', '-Werror', '-O3', '-I', 'repos/libcsv', '-c', 'build/compat/libcsv.c', '-o', 'build/compat/trial-c99.o']
+exit: 0

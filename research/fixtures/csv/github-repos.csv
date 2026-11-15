@@ -1,0 +1,21 @@
+full_name,description,language,homepage,updated_at
+richgel999/miniz,"miniz: Single C source file zlib-replacement library, originally from code.google.com/p/miniz",C++,,2026-11-15T05:29:10Z
+life4/textdistance,"📐 Compute distance between sequences. 30+ algorithms, pure python implementation, common interface, optional external libs usage.",Python,,2026-11-12T15:05:24Z
+DaveGamble/cJSON,Ultralightweight JSON parser in ANSI C,C,,2026-11-15T10:22:38Z
+rgamble/libcsv,Fast and flexible CSV library written in pure ANSI C that can read and write CSV data.,Shell,,2026-11-10T03:10:40Z
+codeplea/tinyexpr,"tiny recursive descent expression parser, compiler, and evaluation engine for math expressions",C,https://codeplea.com/tinyexpr,2026-11-12T17:33:39Z
+networkx/networkx,Network Analysis in Python,Python,https://networkx.org,2026-11-15T10:52:09Z
+pydata/bottleneck,Fast NumPy array functions written in C,Python,,2026-11-15T07:45:54Z
+grantjenks/python-sortedcontainers,"Python Sorted Container Types: Sorted List, Sorted Dict, and Sorted Set",Python,http://www.grantjenks.com/docs/sortedcontainers/,2026-11-13T15:21:02Z
+mreineck/pocketfft,Fork of https://gitlab.mpcdf.mpg.de/mtr/pocketfft to simplify external contributions,C++,,2026-11-15T00:56:29Z
+RoaringBitmap/CRoaring,"Roaring bitmaps in C (and C++), with SIMD (AVX2, AVX-512 and NEON) optimizations: used by Apache Doris, ClickHouse, Alibaba Tair, Redpanda, YDB and StarRocks",C,http://roaringbitmap.org/,2026-11-11T06:36:52Z
+microsoft/mimalloc,mimalloc is a compact general purpose allocator with excellent performance.,C,https://microsoft.github.io/mimalloc,2026-11-15T13:25:55Z
+sqlite/sqlite,Official Git mirror of the SQLite source tree,C,,2026-11-15T14:02:44Z
+scipy/scipy,SciPy library main repository,Python,https://scipy.org,2026-11-15T13:12:31Z
+duckdb/duckdb,DuckDB is a high-performance analytical database system,C++,http://www.duckdb.org,2026-11-15T14:45:53Z
+aklomp/base64,"Fast Base64 stream encoder/decoder in C99, with SIMD acceleration",C,,2026-11-12T02:28:28Z
+python-pillow/Pillow,Python Imaging Library (fork),Python,https://python-pillow.org,2026-11-15T13:13:23Z
+michelerenzullo/FastBoxBlur,Fast Box Blur using a sliding accumulator and with reflected borders policy,C,,2026-09-03T11:24:57Z
+stephenberry/glaze,"Extremely fast, in memory, serialization, reflection, and RPC library for C++. JSON, BEVE, BSON, CBOR, CSV, JSONB, MessagePack, TOML, YAML, EETF",C++,https://stephenberry.github.io/glaze/,2026-11-15T07:44:57Z
+kgabis/parson,Lightweight JSON library written in C.,C,,2026-11-13T17:24:30Z
+zserge/jsmn,Jsmn is a world fastest JSON parser/tokenizer. This is the official repo replacing the old one at Bitbucket,C,,2026-11-13T15:53:52Z

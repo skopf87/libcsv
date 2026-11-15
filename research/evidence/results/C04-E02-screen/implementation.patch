@@ -1,0 +1,21 @@
+--- a/libcsv.c
++++ b/libcsv.c
+@@ -493,9 +493,15 @@
+ 
+   if (dest_size == 0) {
+     /* Count quotes independently; a sizing query never needs output stores. */
+-    size_t i, extra = 0;
+-    for (i = 0; i < src_size; ++i)
+-      extra += csrc[i] == quote;
++    size_t remaining = src_size, extra = 0;
++    const unsigned char *scan = csrc;
++    while (remaining) {
++      const unsigned char *match = memchr(scan, quote, remaining);
++      if (match == NULL) break;
++      remaining -= (size_t)(match - scan) + 1;
++      scan = match + 1;
++      ++extra;
++    }
+     if (src_size > SIZE_MAX - 2 || extra > SIZE_MAX - 2 - src_size)
+       return SIZE_MAX;
+     return src_size + extra + 2;

@@ -1,0 +1,84 @@
+{
+  "repository": "https://github.com/rgamble/libcsv",
+  "repo_dir": "libcsv",
+  "upstream_commit": "b1d5212831842ee5869d99bc208a21837e4037d5",
+  "protocol_version": 1,
+  "editable": [
+    "libcsv.c"
+  ],
+  "immutable": [
+    "benchmarks/csv_adapter.py",
+    "benchmarks/csv_bench.c",
+    "benchmarks/csv_validate.py",
+    "benchmarks/csv_bounds.c",
+    "fixtures/csv/github-repos.csv"
+  ],
+  "build": [
+    [
+      "python3",
+      "{root}/benchmarks/csv_adapter.py",
+      "build",
+      "{src}",
+      "{build}"
+    ]
+  ],
+  "test": [
+    [
+      "python3",
+      "{root}/benchmarks/csv_adapter.py",
+      "test",
+      "{src}",
+      "{build}"
+    ]
+  ],
+  "benchmark": [
+    "taskset",
+    "-c",
+    "0",
+    "{build}/csv_bench"
+  ],
+  "timeout": 120,
+  "benchmark_timeout": 30,
+  "screen_rounds": 3,
+  "validation_rounds": 15,
+  "warmups": 1,
+  "order_seed": 20261115,
+  "minimum_gain": 0.02,
+  "regression_limit": 0.03,
+  "memory_ratio_limit": 1.1,
+  "memory_slack_kb": 1024,
+  "workloads": [
+    {
+      "name": "count1024",
+      "split": "screen"
+    },
+    {
+      "name": "sized1024",
+      "split": "screen"
+    },
+    {
+      "name": "sized32",
+      "split": "screen"
+    },
+    {
+      "name": "count5553",
+      "split": "heldout"
+    },
+    {
+      "name": "quoted",
+      "split": "heldout"
+    },
+    {
+      "name": "direct256",
+      "split": "heldout"
+    },
+    {
+      "name": "metadata",
+      "split": "heldout"
+    },
+    {
+      "name": "custom255",
+      "split": "heldout"
+    }
+  ]
+}

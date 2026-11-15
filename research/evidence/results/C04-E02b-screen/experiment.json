@@ -1,0 +1,88 @@
+{
+  "id": "C04-E02b-screen",
+  "target": "C04",
+  "started": "2026-11-15T17:27:53.850679+00:00",
+  "reference_commit": "8b5477fe4614ae3073cecc1d8f6b0e60fe4e765e",
+  "upstream_commit": "b1d5212831842ee5869d99bc208a21837e4037d5",
+  "hypothesis": "Retry sparse-quote memchr sizing with required standard string header",
+  "stage": "screen",
+  "immutable": {
+    "configs/C04.json": "e2c52a84129ba5ffd6ef4b61ed0f35bec20f3e293e4a489d1486cfadba0a2423",
+    "framework/lab.py": "f3ba128f539da7fe27da7af256cd37f9d15a9528bb082420c6fad9b0817c8861",
+    "benchmarks/csv_adapter.py": "14eef74cc431209b34730e845fb648635dbec801a2fce38f674e2b323b32745a",
+    "benchmarks/csv_bench.c": "28acbd46a87ec1fc6899862871ecdec5afe740eab4ee204fdb338bf71f0919dc",
+    "benchmarks/csv_validate.py": "8046d4d7794b991aff2600d3c6f3cac92c128f7d78595f604437c289bb624154",
+    "benchmarks/csv_bounds.c": "89c060eb50ec7542f5403fed5fe071476afb64b7a569b92cb9641445be9719f5",
+    "fixtures/csv/github-repos.csv": "3ddda6b8712b6d0bb484f668f2804abc4d7383f8a52ffe325d27e0f768a89d0c"
+  },
+  "status": "screened",
+  "patch_sha256": "26a2315693c950f992285cf78c779dd080716358db0d0d6233bdc9440c69387b",
+  "modified_files": [
+    "libcsv.c"
+  ],
+  "correctness": "pass",
+  "metrics": {
+    "count1024": {
+      "split": "screen",
+      "reference_median": 0.01060248,
+      "trial_median": 0.000795722,
+      "reference_cv": 0.16584374424308754,
+      "trial_cv": 0.04147069923278542,
+      "ratio": 0.07757863628120895,
+      "time_reduction_pct": 92.2421363718791,
+      "ratio_ci95": [
+        0.0640080979202504,
+        0.09719358418285444
+      ],
+      "reference_rss_kb": 14336,
+      "trial_rss_kb": 14336
+    },
+    "sized1024": {
+      "split": "screen",
+      "reference_median": 0.052251167,
+      "trial_median": 0.042764908,
+      "reference_cv": 0.011999437198458576,
+      "trial_cv": 0.009060697669023957,
+      "ratio": 0.8169356310475258,
+      "time_reduction_pct": 18.306436895247423,
+      "ratio_ci95": [
+        0.8008019898651876,
+        0.8318534540302419
+      ],
+      "reference_rss_kb": 14336,
+      "trial_rss_kb": 14336
+    },
+    "sized32": {
+      "split": "screen",
+      "reference_median": 0.055605719,
+      "trial_median": 0.063691482,
+      "reference_cv": 0.027830770106141333,
+      "trial_cv": 0.03450651951049456,
+      "ratio": 1.1111023782975058,
+      "time_reduction_pct": -11.11023782975058,
+      "ratio_ci95": [
+        1.0888414826733708,
+        1.1482768705859197
+      ],
+      "reference_rss_kb": 14336,
+      "trial_rss_kb": 14336
+    }
+  },
+  "aggregates": {
+    "screen": {
+      "ratio": 0.4129473519977733,
+      "ratio_ci95": [
+        0.3889874240431243,
+        0.4448528324053022
+      ]
+    },
+    "all": {
+      "ratio": 0.4129473519977733,
+      "ratio_ci95": [
+        0.3889874240431243,
+        0.4448528324053022
+      ]
+    }
+  },
+  "finished": "2026-11-15T17:27:58.089084+00:00"
+}

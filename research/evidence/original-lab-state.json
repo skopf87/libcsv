@@ -1,0 +1,8 @@
+{
+  "best_commit": "8b5477fe4614ae3073cecc1d8f6b0e60fe4e765e",
+  "status": "completed",
+  "baseline_experiment": "C04-baseline",
+  "best_experiment": "C04-E01-validate",
+  "confirmation_experiment": "C04-confirm-upstream",
+  "conclusion": "Validated and independently rerun against original upstream on this CPU"
+}

@@ -1,0 +1,6 @@
+/build/
+/repos/
+/results/
+/worktrees/
+/.lock
+__pycache__/

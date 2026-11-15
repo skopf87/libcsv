@@ -1,0 +1,7 @@
+build/compat/libcsv.c:127:13: optimized: basic block part vectorized using 8 byte vectors
+build/compat/libcsv.c:130:16: optimized: basic block part vectorized using 16 byte vectors
+build/compat/libcsv.c:136:15: optimized: basic block part vectorized using 16 byte vectors
+build/compat/libcsv.c:200:13: optimized: basic block part vectorized using 8 byte vectors
+build/compat/libcsv.c:396:45: optimized: basic block part vectorized using 8 byte vectors
+build/compat/libcsv.c:497:19: optimized: loop vectorized using 16 byte vectors
+build/compat/libcsv.c:497:19: optimized: loop vectorized using 16 byte vectors

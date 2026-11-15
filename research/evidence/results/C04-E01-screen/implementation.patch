@@ -1,0 +1,19 @@
+--- a/libcsv.c
++++ b/libcsv.c
+@@ -491,6 +491,16 @@
+   if (dest == NULL)
+     dest_size = 0;
+ 
++  if (dest_size == 0) {
++    /* Count quotes independently; a sizing query never needs output stores. */
++    size_t i, extra = 0;
++    for (i = 0; i < src_size; ++i)
++      extra += csrc[i] == quote;
++    if (src_size > SIZE_MAX - 2 || extra > SIZE_MAX - 2 - src_size)
++      return SIZE_MAX;
++    return src_size + extra + 2;
++  }
++
+   if (dest_size > 0)
+     *cdest++ = quote;
+   chars++;

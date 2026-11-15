@@ -1,0 +1,18 @@
+{
+  "candidate_id": "C04",
+  "repository": "https://github.com/rgamble/libcsv",
+  "fork": "https://github.com/skopf87/libcsv",
+  "upstream_commit": "b1d5212831842ee5869d99bc208a21837e4037d5",
+  "original_verified_lab_commit": "8b5477fe4614ae3073cecc1d8f6b0e60fe4e765e",
+  "original_lab_checkpoint": "b3ab746df57c36a2707d806fd96ee08f19516d91",
+  "implementation_file": "libcsv.c",
+  "implementation_sha256": "a0798c89aa9a0696d042716b1a819c8528ad60f78eeaac3c0cf0ded8caf9f047",
+  "implementation_git_blob": "1ee942e8c555cd5f3a78968d2d652ca5be6315b7",
+  "confirmation_experiment": "C04-confirm-upstream",
+  "confirmed_paired_time_reduction_pct": 47.702336804229695,
+  "confirmed_ratio_ci95": [
+    0.5152452195835101,
+    0.5313737503340022
+  ],
+  "novelty": "Known implementation technique; global novelty uncertain"
+}

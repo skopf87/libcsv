@@ -1,0 +1,9 @@
+{
+  "configs/C04.json": "e2c52a84129ba5ffd6ef4b61ed0f35bec20f3e293e4a489d1486cfadba0a2423",
+  "framework/lab.py": "f3ba128f539da7fe27da7af256cd37f9d15a9528bb082420c6fad9b0817c8861",
+  "benchmarks/csv_adapter.py": "14eef74cc431209b34730e845fb648635dbec801a2fce38f674e2b323b32745a",
+  "benchmarks/csv_bench.c": "28acbd46a87ec1fc6899862871ecdec5afe740eab4ee204fdb338bf71f0919dc",
+  "benchmarks/csv_validate.py": "8046d4d7794b991aff2600d3c6f3cac92c128f7d78595f604437c289bb624154",
+  "benchmarks/csv_bounds.c": "89c060eb50ec7542f5403fed5fe071476afb64b7a569b92cb9641445be9719f5",
+  "fixtures/csv/github-repos.csv": "3ddda6b8712b6d0bb484f668f2804abc4d7383f8a52ffe325d27e0f768a89d0c"
+}

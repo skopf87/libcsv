@@ -1,0 +1,23 @@
+# Novelty assessment
+
+No algorithm in this campaign is claimed novel. A local timing gain is not a scientific discovery. “Newly applied” below refers to the inspected upstream revision and the local implementation change; it does not mean no fork or historical patch has ever used it.
+
+| Contribution | Supported classification | Evidence and limits |
+|---|---|---|
+| cJSON unescaped-string copy | Existing technique applied to the pinned parsing implementation; novelty uncertain | The actual baseline's parser has two scalar passes and counts escapes; its printer already uses memcpy for unescaped strings. SIMD/string fast paths are established in other JSON parsers. Current targeted PR searches and an older kbranigan/cJSON fork were inspected. No equivalent current PR surfaced, but bounded searches cannot rule out forks, old patches or unindexed work. |
+| libcsv size-query quote reduction | Existing technique newly implemented in this pinned size-query path; novelty uncertain | Baseline csv_write2 performs bounded-write/saturation checks even for destination-size zero. Branchless character counting and SIMD classification are established. Targeted csv_write2 PR search returned no match; a requested fork source endpoint was unavailable. No exhaustive fork search was completed. |
+| miniz weighted/lane Adler sums | Known checksum algebra, not promoted | Existing zlib implementations, simd-adler32 and miniz_oxide's optional SIMD support already use parallel Adler ideas. Scalar adaptation here does not establish novelty, and regression gates failed. |
+| tinyexpr safe/wide multiply-divide | Established combinatorial arithmetic, not promoted | Recent upstream commit 7ab30db fixes false overflow through GCD cancellation. Jason Evans' 2007 article and its discussion cover cancellation, conditional safe multiplication and wider intermediates; GMP and Lemire document related binomial algorithms. Exact methods were preserved, but regression gates failed. |
+| Sorted Containers block deletion | Currently being developed elsewhere in the same project | Open PR #263 adds related block-range deletion helpers. This work was deferred before implementation. |
+
+Primary and author sources inspected or located:
+
+- [Karpathy autoresearch](https://github.com/karpathy/autoresearch), pinned at `228791fb499afffb54b46200aca536f79142f117`: experiment-loop inspiration, not a general software benchmarking standard.
+- [Pinned cJSON source](https://github.com/DaveGamble/cJSON/blob/master/cJSON.c) and [older kbranigan fork](https://github.com/kbranigan/cJSON/blob/master/cJSON.c); the exact inspected contents and current revision metadata are archived locally.
+- [Parsing Gigabytes of JSON per Second](https://arxiv.org/abs/1902.08318): substantial related SIMD parsing work. This does not prove priority for the exact small patch here.
+- [libcsv](https://github.com/rgamble/libcsv), its API manual and [related PostgreSQL COPY discussion](https://www.mail-archive.com/pgsql-hackers%40lists.postgresql.org/msg224495.html): related serialization and SIMD work, not an exhaustive equivalence search.
+- [simd-adler32](https://github.com/mcountryman/simd-adler32), [miniz_oxide](https://docs.rs/crate/miniz_oxide/latest), [Chromium zlib source](https://chromium.googlesource.com/chromium/src/third_party/zlib/+/refs/heads/main/adler32_simd.c), and [RFC1950](https://www.rfc-editor.org/rfc/rfc1950).
+- [Fixed-precision n choose k and overflow](https://jasone.github.io/2007/11/10/fixed-precision-n-choose-k-and-overflow/), [GMP binomial algorithms](https://gmplib.org/manual/Binomial-Coefficients-Algorithm), and [Lemire's binomial computation discussion](https://lemire.me/blog/2020/02/26/fast-divisionless-computation-of-binomial-coefficients/).
+- [Sorted Containers PR #263](https://github.com/grantjenks/python-sortedcontainers/pull/263), [textdistance PR #103](https://github.com/life4/textdistance/pull/103), and Pillow's [histogram PR #10161](https://github.com/python-pillow/Pillow/pull/10161): active work that changes opportunity selection.
+
+`sources/` retains exact queries, raw results, source snapshots, current commit checks and PR bodies. Initial queries are limited to five matches and follow-ups to bounded result counts. Requests to list forks through the GitHub fetch tool were unsupported; inspected forks/competitors came from separate search and source retrieval. Some source URLs failed and literature full text was incomplete. Consequently neither successful patch is described as a potentially novel algorithmic contribution. Cross-implementation performance comparisons and a comprehensive historical novelty audit remain future work.

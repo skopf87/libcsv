@@ -1,0 +1,170 @@
+{
+  "id": "C04-confirm-upstream",
+  "target": "C04",
+  "started": "2026-11-15T17:33:28.940894+00:00",
+  "reference_commit": "b1d5212831842ee5869d99bc208a21837e4037d5",
+  "upstream_commit": "b1d5212831842ee5869d99bc208a21837e4037d5",
+  "hypothesis": "Independent rerun of best verified size-query patch against pristine upstream",
+  "stage": "validate",
+  "immutable": {
+    "configs/C04.json": "e2c52a84129ba5ffd6ef4b61ed0f35bec20f3e293e4a489d1486cfadba0a2423",
+    "framework/lab.py": "f3ba128f539da7fe27da7af256cd37f9d15a9528bb082420c6fad9b0817c8861",
+    "benchmarks/csv_adapter.py": "14eef74cc431209b34730e845fb648635dbec801a2fce38f674e2b323b32745a",
+    "benchmarks/csv_bench.c": "28acbd46a87ec1fc6899862871ecdec5afe740eab4ee204fdb338bf71f0919dc",
+    "benchmarks/csv_validate.py": "8046d4d7794b991aff2600d3c6f3cac92c128f7d78595f604437c289bb624154",
+    "benchmarks/csv_bounds.c": "89c060eb50ec7542f5403fed5fe071476afb64b7a569b92cb9641445be9719f5",
+    "fixtures/csv/github-repos.csv": "3ddda6b8712b6d0bb484f668f2804abc4d7383f8a52ffe325d27e0f768a89d0c"
+  },
+  "status": "accepted",
+  "patch_sha256": "9d52f2d70d03401b551942b396adbb4311c72b9a4cc26ba2ba21552635b9e98e",
+  "modified_files": [
+    "libcsv.c"
+  ],
+  "correctness": "pass",
+  "metrics": {
+    "count1024": {
+      "split": "screen",
+      "reference_median": 0.03962291,
+      "trial_median": 0.010369021,
+      "reference_cv": 0.05305989213158206,
+      "trial_cv": 0.1811559471558609,
+      "ratio": 0.2593416502470068,
+      "time_reduction_pct": 74.06583497529932,
+      "ratio_ci95": [
+        0.2438425124811586,
+        0.27694377582372065
+      ],
+      "reference_rss_kb": 14464,
+      "trial_rss_kb": 14464
+    },
+    "sized1024": {
+      "split": "screen",
+      "reference_median": 0.080399933,
+      "trial_median": 0.050478781,
+      "reference_cv": 0.027163606227375105,
+      "trial_cv": 0.06262343743394644,
+      "ratio": 0.6409869229017049,
+      "time_reduction_pct": 35.90130770982951,
+      "ratio_ci95": [
+        0.6216049678195305,
+        0.6654387350198774
+      ],
+      "reference_rss_kb": 14464,
+      "trial_rss_kb": 14464
+    },
+    "sized32": {
+      "split": "screen",
+      "reference_median": 0.089446372,
+      "trial_median": 0.052867835,
+      "reference_cv": 0.0363782880731827,
+      "trial_cv": 0.02975733067625185,
+      "ratio": 0.594759047401987,
+      "time_reduction_pct": 40.5240952598013,
+      "ratio_ci95": [
+        0.5824008879082156,
+        0.6076480886751254
+      ],
+      "reference_rss_kb": 14464,
+      "trial_rss_kb": 14464
+    },
+    "count5553": {
+      "split": "heldout",
+      "reference_median": 0.03906515,
+      "trial_median": 0.010724103,
+      "reference_cv": 0.3973089837165991,
+      "trial_cv": 0.4641122950017272,
+      "ratio": 0.26365839099010047,
+      "time_reduction_pct": 73.63416090098995,
+      "ratio_ci95": [
+        0.24955121356046323,
+        0.2780477617786206
+      ],
+      "reference_rss_kb": 14464,
+      "trial_rss_kb": 14464
+    },
+    "quoted": {
+      "split": "heldout",
+      "reference_median": 0.096298607,
+      "trial_median": 0.053269716,
+      "reference_cv": 0.03877808742104131,
+      "trial_cv": 0.057124583692900396,
+      "ratio": 0.5451676632392459,
+      "time_reduction_pct": 45.48323367607541,
+      "ratio_ci95": [
+        0.5336867779746631,
+        0.5592663453348661
+      ],
+      "reference_rss_kb": 14464,
+      "trial_rss_kb": 14464
+    },
+    "direct256": {
+      "split": "heldout",
+      "reference_median": 0.041726224,
+      "trial_median": 0.041509718,
+      "reference_cv": 0.06117648491089825,
+      "trial_cv": 0.04056267897638195,
+      "ratio": 0.9883908169675294,
+      "time_reduction_pct": 1.1609183032470605,
+      "ratio_ci95": [
+        0.9646967323307657,
+        1.0140047867142346
+      ],
+      "reference_rss_kb": 14464,
+      "trial_rss_kb": 14464
+    },
+    "metadata": {
+      "split": "heldout",
+      "reference_median": 0.089939124,
+      "trial_median": 0.059076811,
+      "reference_cv": 0.034722515036530406,
+      "trial_cv": 0.04000869122313932,
+      "ratio": 0.6573246674549764,
+      "time_reduction_pct": 34.26753325450236,
+      "ratio_ci95": [
+        0.6483630080866758,
+        0.6667811113642671
+      ],
+      "reference_rss_kb": 14464,
+      "trial_rss_kb": 14464
+    },
+    "custom255": {
+      "split": "heldout",
+      "reference_median": 0.088734854,
+      "trial_median": 0.052684151,
+      "reference_cv": 0.02797515862767866,
+      "trial_cv": 0.11194832327353008,
+      "ratio": 0.6060597701973294,
+      "time_reduction_pct": 39.39402298026706,
+      "ratio_ci95": [
+        0.5839356667322587,
+        0.6436822700464363
+      ],
+      "reference_rss_kb": 14464,
+      "trial_rss_kb": 14464
+    }
+  },
+  "aggregates": {
+    "screen": {
+      "ratio": 0.4624032013731403,
+      "ratio_ci95": [
+        0.45050383933708127,
+        0.47675688180854614
+      ]
+    },
+    "heldout": {
+      "ratio": 0.5630658067816988,
+      "ratio_ci95": [
+        0.5550526999802106,
+        0.5713381395284434
+      ]
+    },
+    "all": {
+      "ratio": 0.522976631957703,
+      "ratio_ci95": [
+        0.5152452195835101,
+        0.5313737503340022
+      ]
+    }
+  },
+  "finished": "2026-11-15T17:33:46.889116+00:00"
+}
